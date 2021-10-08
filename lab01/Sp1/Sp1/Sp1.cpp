@@ -86,7 +86,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.hCursor = LoadCursorFromFile(L"pointer.cur");
     RECT screen_rect;
     GetWindowRect(GetDesktopWindow(), &screen_rect);
-    wcex.hbrBackground = CreatePatternBrush((HBITMAP)LoadImage(NULL, L"C:\\Users\\Pavel\\Desktop\\background.bmp", IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION | LR_LOADFROMFILE));
+    wcex.hbrBackground = CreatePatternBrush((HBITMAP)LoadImage(NULL, L"C:\\Users\\Pavel\\Desktop\\background.bmp", IMAGE_BITMAP, screen_rect.left, screen_rect.bottom, LR_CREATEDIBSECTION | LR_LOADFROMFILE));
     wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_SP1);
     wcex.lpszClassName  = szWindowClass;
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_MYICON));
