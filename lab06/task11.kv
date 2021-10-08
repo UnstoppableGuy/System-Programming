@@ -1,0 +1,54 @@
+
+
+<Container>:
+    text_label_1: text_label_1
+    text_label_2: text_label_2
+    text_label_3: text_label_3
+    start_button: start_button
+    stop_button: stop_button
+
+    Label:
+        id: text_label_1
+        pos_hint: {'center_x': 0.5, 'y': 0.2}
+        font_size: 40
+        text: 'BSUIR'
+        color: [1, 71, 0, 1]
+
+    Label:
+        id: text_label_2
+        pos_hint: {'center_x': 0.5, 'y': 0.1}
+        font_size: 40
+        text: '953506'
+        color: [1, 71, 0, 1]
+
+    Label:
+        id: text_label_3
+        pos_hint: {'center_x': 0.5, 'y': 0.3}
+        font_size: 40
+        text: 'Takunov'
+        color: [1, 71, 0, 1]
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        padding: 10
+
+        size_hint: 0.4, 0.2
+        pos_hint: {'center_x': 0.5}
+
+        Button:
+            id: start_button
+            text: 'Start'
+            font_size: 20
+            background_color: [1, 71, 0, 1]
+
+            on_release: root.start_moving()
+
+        Button:
+            id: stop_button
+            text: 'Stop'
+            font_size: 20
+            background_color: [71, 0, 0, 1]
+            disabled: True
+
+            on_release: root.stop_moving()

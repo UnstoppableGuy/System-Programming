@@ -1,0 +1,34 @@
+
+
+<Container>:
+    float_layout: float_layout
+    button_draw: button_draw
+    button_clear: button_clear
+
+    FloatLayout:
+        id: float_layout
+        padding: 10
+        size_hint: 0.8, 0.65
+        pos_hint: {'center_x': 0.5, 'center_y': 0.65}
+        canvas:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+        size_hint: 0.4, 0.3
+        pos_hint: {'center_x': 0.5}
+
+        Button:
+            id: button_draw
+            text: 'Draw'
+            font_size: 16
+            on_press: root.draw_figure()
+        Button:
+            id: button_clear
+            text: 'Clear'
+            font_size: 16
+            on_press: root.clear_canvas()

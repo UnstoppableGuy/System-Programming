@@ -1,0 +1,7 @@
+Kivy
+Kivy-Garden
+kivymd
+psutil
+pyxhook
+pynput
+winregistry

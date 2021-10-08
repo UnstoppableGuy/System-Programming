@@ -1,0 +1,97 @@
+
+
+ScreenManagement:
+    MainScreen:
+    CanvasScreen:
+
+<MainScreen>:
+    red_checkbox: red_checkbox
+    green_checkbox: green_checkbox
+    blue_checkbox: blue_checkbox
+    draw_checkbox: draw_checkbox
+
+    rhombus_checkbox: rhombus_checkbox
+    rectangle_checkbox: rectangle_checkbox
+    square_checkbox: square_checkbox
+    star_checkbox: star_checkbox
+
+    name: 'main_screen'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            padding: 10
+            GridLayout:
+                cols: 2
+                CheckBox:
+                    id: red_checkbox
+                    group: 'colors'
+                    active: 'down'
+                Label:
+                    text: 'Red'
+
+                CheckBox:
+                    id: green_checkbox
+                    group: 'colors'
+                Label:
+                    text: 'Green'
+
+                CheckBox:
+                    id: blue_checkbox
+                    group: 'colors'
+                Label:
+                    text: 'Blue'
+
+                CheckBox:
+                    id: draw_checkbox
+                Label:
+                    text: 'Draw'
+
+            GridLayout:
+                cols: 2
+
+                CheckBox:
+                    id: rhombus_checkbox
+                    group: 'form'
+                    active: 'down'
+                Label:
+                    text: 'Rhombus'
+
+                CheckBox:
+                    id: square_checkbox
+                    group: 'form'
+                Label:
+                    text: 'Square'
+
+                CheckBox:
+                    id: rectangle_checkbox
+                    group: 'form'
+                Label:
+                    text: 'Rectangle'
+
+                CheckBox:
+                    id: star_checkbox
+                    group: 'form'
+                Label:
+                    text: 'Star'
+        Button:
+            text: 'Go to canvas'
+            size_hint: 0.5, 0.1
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            on_release:
+                root.draw_figure()
+                app.root.current = 'canvas_screen'
+
+<CanvasScreen>:
+    name: 'canvas_screen'
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 40
+        pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+        size_hint: 0.5, 0.25
+
+        Button:
+            text: 'Go back'
+            on_release: app.root.current = 'main_screen'
